@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>COVInformate</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://iaipoaxaca.org.mx/covid19/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="">
+  <link rel="apple-touch-icon" sizes="60x60" href="">
+  <link rel="apple-touch-icon" sizes="72x72" href="">
+  <link rel="apple-touch-icon" sizes="76x76" href="">
+  <link rel="apple-touch-icon" sizes="114x114" href="">
+  <link rel="apple-touch-icon" sizes="120x120" href="">
+  <link rel="apple-touch-icon" sizes="144x144" href="">
+  <link rel="apple-touch-icon" sizes="152x152" href="">
+  <link rel="apple-touch-icon" sizes="180x180" href="">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link rel="icon" type="image/png" sizes="96x96" href="">
+  <link rel="icon" type="image/png" sizes="16x16" href="">
+  <link rel="manifest" href="">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="">
+  <meta name="theme-color" content="#0b293c">
+   <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+<style type="text/css">
+body{
+
+
+}
+.mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: monse;
+  src: url(fonts/Montserrat/Montserrat-Black.otf);
+}
+@font-face {
+  font-family: monseRegular;
+  src: url(fonts/Montserrat/Montserrat-Regular.otf);
+}
+@font-face {
+  font-family: monseExtra;
+  src: url(fonts/Montserrat/Montserrat-ExtraBold.otf);
+}
+@font-face {
+  font-family: open;
+  src: url(fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: openBold;
+  src: url(fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: openEB;
+  src: url(fonts/open-sans/OpenSans-ExtraBold.ttf);
+}
+.fondo1 {
+  background-image: url("C:/Users/johan/Favorites/Desktop/Covinformate/sitio/sitio-01.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 135px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.fondo2 {
+  background-image: url("C:/Users/johan/Favorites/Desktop/Covinformate/sitio/sitio-04.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 67.5px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.fondo3 {
+  background-image: url("C:/Users/johan/Favorites/Desktop/Covinformate/sitio/sitio-02.png"); /* The image used */
+  background-color: #c7c4c4; /* Used if the image is unavailable */
+  height: 202.5px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.fondo4 {
+  background-image: url("img/sitio-33.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 202.5px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.vl {
+  border-left: 1px solid white;
+  height: 100px;
+}
+.margin-special{
+  margin-bottom: 20px; 
+  margin-top: 50px; 
+  font-size: 20px;
+}
+.texto-covid{
+  
+  font-family: openEB; 
+  font-size: 21px; 
+  color: #405168;
+}
+.texto-covid:hover{
+  text-decoration: none;
+  color: #6faca6;
+}
+.texto-menu{
+  font-family: 'openBold', sans-serif !important;
+  color: white !important; 
+  margin: 0 20px 0 20px;
+}
+.bordemenu{
+  border: 1px solid white;
+  margin-right: 25px;
+  font-size: 22px;
+}
+.bordemenu:hover{
+  background-color: #43a29d;
+}
+.preguntas{ 
+  color: #0b293c; 
+  font-size: 21px; 
+  font-family: openEB;
+}
+.preguntas:hover{
+  color: #cdd6dc;
+  text-decoration: none;
+}
+.subrayar{
+  font-size: 21px; 
+  color: #cdd6dc; 
+  font-family: openEB;
+}
+.subrayar:hover{
+   color: #cdd6dc; 
+   text-decoration: underline;
+   text-decoration-color: #43a29d;
+}
+.texto-inicio{
+  font-family: open; 
+  color: #0b293c;
+  font-size: 18px; 
+  line-height: 30px;
+  margin-top: 40px;
+}
+.smallpad{
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+  .margin-special {
+    margin-bottom: 100px;
+  }
+@media screen and (max-width: 800px) {
+  .margin-special {
+    margin-top: 50px;
+  }
+.navbar-collapse{
+  background-color: rgba(0, 19, 48, .9);  
+}  
+.titulo{
+  font-size: 16px !important;
+}
+.logomini{
+height: 40px !important;
+}
+.bordernone{
+  border-bottom: none !important;
+}
+.iconomax{
+  max-height: 400px;
+}
+.bordemenu{
+  border: none !important;
+  font-size: 18px !important;
+}
+.amplia1{
+  height: 200px !important; 
+}
+.amplia2{
+  height: 300px !important; 
+}
+.amplia3{
+  height: 800px !important; 
+}
+.desplaza1{
+  margin-top: 200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+}
+.margin-special{
+  margin-bottom: 50px; 
+}
+.texto-inicio{
+  font-family: open; 
+  color: #0b293c;
+  margin-top: 5px !important; 
+  font-size: 12px; 
+  line-height: 25px;
+}
+.participa{
+  max-height: 35px !important;
+}
+.icon-bar {
+  top: 55% !important;
+}
+.icon-bar-denuncia {
+  top: 60% !important;
+}
+}
+
+.boton {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    cursor: pointer;
+    height: 25px;
+    width: 100%;
+   line-height: 20px;
+   font-family: 'openBold', sans-serif !important;
+}
+
+.boton1 {
+    background-color: transparent; 
+    color: #DAEDED;
+    border: solid 1px white; 
+    margin-top: 15px;
+}
+
+.boton1:hover {
+    background-color: #43a29d; 
+    color: white;
+    text-decoration: none;
+}
+.icon-bar {
+  position: fixed;
+  top: 80%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.icon-bar-denuncia {
+  position: fixed;
+  top: 65%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.participa{
+  max-height: 80px;
+}
+</style>
+
+
+</head>
+<body>
+<div class="icon-bar">
+  <a href=""><img class="participa" src="img/BOTON-PARTICIPA.png" border="none" onMouseOver="this.src='img/BOTON-PARTICIPA-HOVER.png';" onMouseOut="this.src='img/BOTON-PARTICIPA.png';"/></a>
+</div>  
+<div class="icon-bar-denuncia">
+  <a href=""><img class="participa" src="img/BOTON-DENUNCIA.png" border="none" onMouseOver="this.src='img/BOTON-DENUNCIA-HOVER.png';" onMouseOut="this.src='img/BOTON-DENUNCIA.png';"/></a>
+</div> 
+<div class="fondo1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+       <img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\sitio-14.png" class="img-fluid d-inline logomini" style="max-height: 80px;"><span class="d-inline titulo" style="font-family: 'monse', sans-serif !important; font-size: 27px; color: white;"> COVInformate</span><div class="vl d-inline ml-3 mr-3"></div>
+       <span class="d-inline titulo" style="font-family: 'monseRegular', sans-serif !important; font-size: 27px; color: white;"> #QuédateEnCasa</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fondo2">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0)">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" style="z-index: 9999;">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active bordemenu">
+        <a class="nav-link texto-menu" href="C:/Users/johan/Favorites/Desktop/Covinformate/Index.html">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item bordemenu">
+        <a class="nav-link texto-menu" href="covid_19">COVID-19</a>
+      </li>
+      <li class="nav-item bordemenu">
+        <a class="nav-link texto-menu" href="informacion_util">Información útil</a>
+      </li>
+      <li class="nav-item bordemenu">
+        <a class="nav-link texto-menu" href="datos_personales">Datos personales</a>
+      </li>
+      <li class="nav-item bordemenu">
+        <a class="nav-link texto-menu" href="sitios_interes">Sitios de interés</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+
+<div class="fondo3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      	<p class="text-justify text-white texto-inicio"><span style="font-family: monse;">COVInformate</span> es el espacio de participación ciudadana y de información focalizada a través de un micrositio desarrollado por Alumnos del Instituto Tecnologico de la Laguna, el cual tiene como objetivo contar con un espacio de colaboración y cocreación para la ciudadanía; e informar de manera objetiva las características, estadísticas y actualizaciones respecto de la actual pandemia por COVID-19. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container margin-special">
+	<div class="row">	
+		<div class="col"></div>
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="" border="none" onMouseOver="this.src='';" onMouseOut="this.src='';"/></a></p>
+		</div>
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="img/home/solicitudes.png" border="none" onMouseOver="this.src='img/home/solicitudes-hover.png';" onMouseOut="this.src='img/home/solicitudes.png';"/></a></p>
+		</div>
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="img/home/hospitales.png" border="none" onMouseOver="this.src='img/home/hospitales-hover.png';" onMouseOut="this.src='img/home/hospitales.png';"/></a></p>
+		</div>
+		<div class="col"></div>
+	</div>	
+	<div class="row">
+		<div class="col"></div>	
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="img/home/datos-personales.png" border="none" onMouseOver="this.src='img/home/datos-personales_hover.png';" onMouseOut="this.src='img/home/datos-personales.png';"/></a></p>
+		</div>
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="img/home/lenguas-maternas.png" border="none" onMouseOver="this.src='img/home/lenguas-maternas-hover.png';" onMouseOut="this.src='img/home/lenguas-maternas.png';"/></a></p>
+		</div>
+		<div class="col-md-3 mx-auto smallpad">
+			<p class="text-center"><a href=""><img class="img-fluid iconomax" src="img/home/inf-util.png" border="none" onMouseOver="this.src='img/home/inf-util_hover.png';" onMouseOut="this.src='img/home/inf-util.png';"/></a></p>
+		</div>
+		<div class="col"></div>
+	</div>	
+</div>
+
+
+
+
+<div class="footer">
+	<div class="container amplia2" style="background-color: #79b4ad; height: 150px; position: relative;">
+		<div class="row justify-content-md-center">
+	 		<div class="col-md-8 amplia1" style="background-color: #0b293c; height: 100px; margin-top: -50px; position: absolute; border-top-left-radius: 25px; border-top-right-radius: 25px;">
+	 			<div class="row">
+		 			<div class="col-md-4"></div>
+		 			<div class="col-md-4">
+		 				<p class="text-center"><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\sitio-14.png" class="img-fluid" style="max-height: 80px; margin-top: 10px;"></p>
+		 			</div>
+		 			<div class="col-md-4"></div>
+		 		</div>	
+	 		</div>
+	 		<p class="text-center d-block desplaza1" style="margin-top: 65px;"><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\sitio-18.png" style="max-height: 50px;"><a href="" class="preguntas"> Preguntas Frecuentes</a></p><br>
+	 	</div>	
+	</div>
+	<div class="container-fluid amplia3" style="background-color: #0b293c; height: 280px;">
+		<div class="row">
+			<div class="col-md-2 mt-5" style="border-right: 1px solid white;">
+				<p class="text-center"><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\sitio-14.png" style="max-height: 60px;"></p>
+			</div>
+			<div class="col-md-2 mt-5" style="border-right: 1px solid white;">
+				<br>
+				<p class="text-center"><a href=""><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\footer_4.png" style="max-height: 30px;"></a>
+				<span style="color: white; font-family: monseRegular;"> COVInformate</span>
+			</div>
+			<div class="col-md-2 mt-5" style="border-right: 1px solid white;">
+				<br>
+				<p class="text-center"><a href=""><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\footer_5.png" style="max-height: 30px;"></a>
+				<span style="color: white; font-family: monseRegular;"> COVInformate</span>
+			</div>
+			<div class="col-md-3 mt-5" style="border-right: 1px solid white;">
+				<br>
+				<p class="text-center" style="color: white; font-family: openBold;"><a style="color: white; text-decoration: none;" href=""></a>www.COVInformate.com</p>
+			</div>
+			<div class="col-md-3 mt-5" style="border-right: 1px solid white;">
+				<br>
+				<p class="text-center" style="color: white; font-family: open;"><img src="C:\Users\johan\Favorites\Desktop\Covinformate\footer\ubicacion.png" style="max-height: 25px;">Torreón,Coahuila,México</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">	
+				<p class="text-center d-block" style="margin-top: 40px; color: white; font-size: 16px; font-family: monse;">Copyright © COVInformate 2022</p>
+		 	    <p class="text-center d-block" style="margin-top: 20px; color: white; font-size: 16px; font-family: monseRegular;">#QuedateEnCasa</p>
+	 		</div>
+		</div>	
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<script type='text/javascript' src='https://count.carrierzone.com/app/count_server/count.js'></script>
+<script type='text/javascript'>
+</script>
+</body>
+</html>
